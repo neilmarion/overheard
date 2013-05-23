@@ -15,4 +15,5 @@
 /tmp
 *.swp
 *.swo
+/data
 /coverage
