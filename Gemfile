@@ -36,3 +36,26 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+group :test, :development, :staging do
+  gem 'faker'
+end
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'rb-inotify', '~> 0.9'
+  gem 'better_errors'
+  gem 'rack-mini-profiler'
+  gem 'binding_of_caller'
+end
+
+group :test do
+  gem 'webmock'
+  gem 'capybara'
+  gem 'factory_girl'
+  gem 'guard-rspec'
+  gem 'shoulda'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'simplecov'
+end
