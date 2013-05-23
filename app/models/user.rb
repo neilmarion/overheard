@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
          :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation
-  attr_accessible :first_name, :last_name, :provider, :uid
+  attr_writer :email, :password, :password_confirmation
+  attr_writer :first_name, :last_name, :provider, :uid
 
   def self.from_omniauth(auth)
     
