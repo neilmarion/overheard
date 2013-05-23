@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
          :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_writer :email, :password, :password_confirmation
-  attr_writer :first_name, :last_name, :provider, :uid
+  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :first_name, :last_name, :provider, :uid
 
   def self.from_omniauth(auth)
     
@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   end 
 
   def self.create_from_omniauth(auth)
+    puts auth['info']['email'].inspect
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
@@ -23,19 +24,6 @@ class User < ActiveRecord::Base
       user.username = auth["info"]["nickname"]
       user.email = auth["info"]["email"]
       user.password = Devise.friendly_token[0,20]
-      if auth['extra']
-        if auth['raw_info']
-          if auth['education']
-            auth['extra']['raw_info']['education'].each do |school|
-              if school['type'] == 'College'
-                user.concentration = school['concentration'][0]['name'] if school['concentration']
-                user.college = school['school']['name'] if school['school']
-                break
-              end 
-            end 
-          end 
-        end 
-      end 
     end 
   end 
 
@@ -49,4 +37,8 @@ class User < ActiveRecord::Base
       super
     end 
   end
+
+  def name
+    "#{first_name} #{last_name}"
+  end 
 end

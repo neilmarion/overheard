@@ -22,10 +22,15 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
 gem 'jquery-rails'
 gem 'omniauth-facebook', '1.4.0'
 gem 'omniauth-identity'
 gem 'devise'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+gem 'bootstrap_helper'
+gem 'bootstrap-sass-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,0 +1,14 @@
+pagination: &pagination
+  posts: 10
+development:
+  <<: *pagination
+
+production:
+  <<: *pagination
+
+test:
+  <<: *pagination
+
+staging:
+  <<: *pagination
+

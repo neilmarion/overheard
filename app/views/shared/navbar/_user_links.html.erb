@@ -1,0 +1,12 @@
+<div class="container">
+  <% if user_signed_in? %>
+    <ul class="nav pull-right">
+      <%= render 'shared/navbar/user_links/user_dropdown'%> 
+    </ul>
+    <%= render 'shared/navbar/user_links/user_thumb'%>
+  <% else %>
+    <ul class="nav pull-right">
+      <%= render 'shared/navbar/user_links/sign_in_with_fb_link' %>
+    </ul>
+  <% end %>
+</div>

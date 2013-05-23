@@ -3,3 +3,5 @@
     <%=raw sanitize(simple_format(post.content), :tags => %w(br p)) %>
   </div>
 <% end %>
+
+<%= render 'shared/pagination', collection: @posts %>
