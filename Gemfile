@@ -6,6 +6,8 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'activerecord-postgresql-adapter'
+gem "therubyracer"
+gem "less-rails"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -16,6 +18,7 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
+  gem "twitter-bootstrap-rails"
   gem 'uglifier', '>= 1.0.3'
 end
 
