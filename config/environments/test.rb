@@ -35,6 +35,8 @@ Overheard::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 
+  OmniAuth.config.test_mode = true
+
   OmniAuth.config.mock_auth[:facebook] = { 
     'uid' => '1234',
     'provider' => 'facebook',

@@ -4,3 +4,8 @@
 en:
   general:
     sign_in_with_facebook: "Sign in with Facebook"
+  shared:
+    navbar:
+      user_links:
+        user_dropdown:
+          sign_out: "Sign out" 

@@ -15,7 +15,6 @@ class User < ActiveRecord::Base
   end 
 
   def self.create_from_omniauth(auth)
-    puts auth['info']['email'].inspect
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
