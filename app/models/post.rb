@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :fb_created_at, :fb_id, :fb_updated_at, :user_fb_id
+  attr_accessible :content, :fb_created_at, :fb_id, :fb_updated_at, :user_fb_id, :from_name
 
   belongs_to :user
 

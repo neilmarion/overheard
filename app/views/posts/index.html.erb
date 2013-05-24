@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
   <div class="post-outer">
     <div class="post"> 
-      <%=raw auto_link(sanitize(simple_format(post.content)), :tags => %w(br p)) %>
+      <%= render 'posts/post', post: post%>
     </div>
   </div>
 <% end %>
