@@ -1,6 +1,8 @@
 <% @posts.each do |post| %>
-  <div class="post"> 
-    <%=raw sanitize(simple_format(post.content), :tags => %w(br p)) %>
+  <div class="post-outer">
+    <div class="post"> 
+      <%=raw sanitize(simple_format(post.content), :tags => %w(br p)) %>
+    </div>
   </div>
 <% end %>
 
