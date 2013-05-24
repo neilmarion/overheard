@@ -1,10 +1,9 @@
 <span class="pull-right smallest-grey-text text-align-right row-fluid">
   <div class="span10">
     <%= link_to t('.posted'), "http://facebook.com/#{post.fb_id}" %>
-    <%= t('.ago', time_ago: time_ago_in_words(post.created_at)).html_safe %>
+    <%= t('.ago', time_ago: time_ago_in_words(post.fb_created_at)).html_safe %>
     <%= t('.by') %>
     <%= link_to post.from_name, "http://facebook.com/#{post.user_fb_id}", class: "posted-by"%>
-    <%= post.fb_created_at %>
     <%#= link_to post.user.name, user_path(post.user), class: "posted-by"%>
   </div>
   <div class="span2">

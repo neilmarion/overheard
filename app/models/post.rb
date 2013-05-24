@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
 
-  default_scope order('created_at ASC')
+  default_scope order('fb_created_at DESC')
 
   scope :paginate, lambda { |page|
     page(page).per(PAGINATION['posts']) }

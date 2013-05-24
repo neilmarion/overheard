@@ -4,7 +4,7 @@ describe PostsController do
   describe 'index' do
     let!(:user_1){ FactoryGirl.build(:user_facebook) }
 
-    it 'returns all search results in desc chronological order' do
+    it 'returns all search results in desc chronological order according to fb_created_at' do
       post = FactoryGirl.create(:post)
       get :index
       assigns(:posts).should eq [post]
@@ -15,9 +15,9 @@ describe PostsController do
         @query = "magnanimous"
         word = "Other"
         @jiberish = "xxx"
-        @post_1 = FactoryGirl.create(:post, content: @query)    
-        @post_2 = FactoryGirl.create(:post, content: @query)
-        @post_3 = FactoryGirl.create(:post, content: @query)
+        @post_1 = FactoryGirl.create(:post, content: @query, fb_created_at: Time.now - 3)    
+        @post_2 = FactoryGirl.create(:post, content: @query, fb_created_at: Time.now)
+        @post_3 = FactoryGirl.create(:post, content: @query, fb_created_at: Time.now + 3)
       end 
 
       it "returns all posts in desc chronological order if query is blank" do
