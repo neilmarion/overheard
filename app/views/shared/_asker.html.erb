@@ -4,6 +4,7 @@
     <%= t('.ago', time_ago: time_ago_in_words(post.created_at)).html_safe %>
     <%= t('.by') %>
     <%= link_to post.from_name, "http://facebook.com/#{post.user_fb_id}", class: "posted-by"%>
+    <%= post.fb_created_at %>
     <%#= link_to post.user.name, user_path(post.user), class: "posted-by"%>
   </div>
   <div class="span2">

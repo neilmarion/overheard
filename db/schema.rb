@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(:version => 20130523052245) do
     t.string   "fb_id"
     t.string   "from_name"
     t.string   "user_fb_id"
-    t.string   "fb_created_at"
-    t.string   "fb_updated_at"
+    t.datetime "fb_created_at"
+    t.datetime "fb_updated_at"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
