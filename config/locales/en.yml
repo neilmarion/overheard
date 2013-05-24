@@ -9,3 +9,6 @@ en:
       user_links:
         user_dropdown:
           sign_out: "Sign out" 
+    search_field:
+      search_field:
+        search: "Search: i.e. UPLB, Diliman, sparks"

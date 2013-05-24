@@ -31,6 +31,7 @@ gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'bootstrap_helper'
 gem 'bootstrap-sass-rails'
+gem 'rails_autolink'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
