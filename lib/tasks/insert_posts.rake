@@ -34,8 +34,8 @@ namespace :fb do
         next unless post['likes']
         file_log.puts "Creating post for #{post['id']} with #{post['likes']['count']} likes"
         Post.find_or_create_by_fb_id(fb_id: post['id'], user_fb_id: post['from']['id'], from_name: post['from']['name'],
-          fb_created_at: Time.parse(post['created_time']), fb_updated_at: Time.parse(post['updated_time']), content: post['message']) if post['likes'] &&
-          post['likes']['count'].to_i > 250
+        fb_created_at: Time.parse(post['created_time']), fb_updated_at: Time.parse(post['updated_time']), content: post['message'], 
+        photo_url: post['type'] == "photo" ? post['picture'] : nil ) if post['likes'] && post['likes']['count'].to_i > 250
       end
     end
   end
