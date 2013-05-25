@@ -3,7 +3,7 @@ require 'json'
 
 namespace :fb do
   task :insert_posts => :environment do
-    file_log = File.open(Rails.root.join('inserted_posts', 'log', "#{Time.now.to_i}insert_posts.log"), "w")
+    file_log = File.open(Rails.root.join('log', "#{Time.now.to_i}insert_posts.log"), "w")
     file_log.puts "Generating fb access_token..."
     url = "https://graph.facebook.com/oauth/access_token?client_id=#{FB['key']}&client_secret=#{FB['secret']}&grant_type=client_credentials" 
     access_token_io = open(url)
