@@ -1,0 +1,1 @@
+0,30 * * * * cd ~/overheard_staging && RAILS_ENV=staging bundle exec rake fb:insert_posts > ~/overheard_staging/log/insert_posts_crontab.log 2>&1
