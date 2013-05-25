@@ -1,7 +1,9 @@
 development:
   key: 505334279532125
   secret: d8bdb6fb5d682d0fa72da73951160647 
+  uri: 'http://localhost:3000'
 
 test:
   key: 505334279532125
   secret: d8bdb6fb5d682d0fa72da73951160647 
+  uri: 'http://localhost:3000'

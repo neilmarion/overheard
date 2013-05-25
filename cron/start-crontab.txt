@@ -1,0 +1,1 @@
+0,30 * * * * cd ~/overheard && ~/rvm 1.9.3@overheard rake fb:insert_posts > ~/overheard/log/insert_posts_crontab.log 2>&1
