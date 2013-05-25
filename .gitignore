@@ -17,3 +17,5 @@
 *.swo
 /data
 /coverage
+config/facebook.yml
+config/database.yml
