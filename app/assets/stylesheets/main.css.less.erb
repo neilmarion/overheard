@@ -92,6 +92,22 @@ input[type="text"]{
   border-radius: 0px;
 }
 
+//navbar
+
+.navbar .brand {
+  padding: 0px 0px 0px 175px;
+  opacity: 0.5;
+  -o-transition: @transition_time; 
+  -ms-transition: @transition_time; 
+  -moz-transition: @transition_time; 
+  -webkit-transition: @transition_time; 
+  transition: @transition_time; 
+}
+
+.navbar .brand:hover{
+  opacity: 1;
+}
+
 .navbar-fixed-top .navbar-inner{
   padding: 5px 0px 5px 0px;
 }
@@ -173,3 +189,22 @@ html {
   padding-bottom: 24px;
 }
 
+//footer
+
+footer .footer{
+  border-top: solid 1px @light-grey;
+  text-align: center;
+}
+
+.footer span{
+  padding: 0 0px 0 10px;
+}
+
+.footer a{
+  color: @grey;
+}
+
+.small-grey-text{
+  color: @grey;
+  font-size: @smallest-text-size;
+}

@@ -16,3 +16,7 @@ en:
       posted: "Posted "
       ago: "%{time_ago} ago<br>" 
       by: "by"
+    footer:
+      message: Overheard @ UP web app was written and still being developed by <a href='www.google.com'>Neil Marion dela Cruz</a>. Read the <a href='www.neilmarion.com'>blog entry</a>
+      about: "About"
+      facebook: "Facebook"
