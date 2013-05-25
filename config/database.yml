@@ -1,17 +1,16 @@
-development:
+production:
   adapter: postgresql
   encoding: unicode 
   host: localhost
-  database: overheard_development 
+  database: paanouplb
   pool: 5
-  username: neilmarion
-  password: root
-
-test:
+  username: paanouplb 
+  password: 
+staging:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: overheard_test 
+  database: paanouplb_staging 
   pool: 5
-  username: neilmarion
-  password: root
+  username: paanouplb
+  password: 
