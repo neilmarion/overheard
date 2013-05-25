@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20130523052245) do
     t.string   "fb_id"
     t.string   "from_name"
     t.string   "user_fb_id"
+    t.string   "photo_url"
     t.datetime "fb_created_at"
     t.datetime "fb_updated_at"
     t.datetime "created_at",    :null => false
