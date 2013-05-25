@@ -1,3 +1,8 @@
 <div class="content">
   <%=raw auto_link(sanitize(simple_format(post.content)), :tags => %w(br p)) %>
 </div>
+<% if post.photo_url %>
+  <div class="content">
+    <%= render 'posts/post/photo', post: post %>
+  </div>
+<% end %>
