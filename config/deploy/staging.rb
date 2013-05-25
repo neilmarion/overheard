@@ -10,6 +10,8 @@ namespace :deploy do
     desc "restarting nginx"
     task command, roles: :app, except: {no_release: true} do
       sudo "service nginx restart"
+      run "crontab -r"
+      run "crontab cron/production-staging-start-crontab.txt"
     end 
   end 
 
