@@ -17,6 +17,6 @@ en:
       ago: "%{time_ago} ago<br>" 
       by: "by"
     footer:
-      message: Overheard @ UP web app was written and still being developed by <a href='www.google.com'>Neil Marion dela Cruz</a>. Read the <a href='www.neilmarion.com'>blog entry</a>
+      message: Overheard @ UP web app was written and still being developed by <a href='http://www.facebook.com/nmfdelacruz'>Neil Marion dela Cruz</a>.<br>Read the <a href='http://www.neilmarion.com/index.php/overheard-up-web-app'>blog entry.</a> Email me for suggestions - nmfdelacruz@gmail.com
       about: "About"
       facebook: "Facebook"
