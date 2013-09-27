@@ -244,6 +244,8 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 
+  config.secret_key = '969b4c9d93a99267c9dd758259b845196bd1e35942dca08feef8d9db3014c0beb0c6d7d482dc94639e6c4c675dcf0014fac907d865891a0e14c6e85e455b772f'
+
   FB = YAML.load_file("#{::Rails.root}/config/facebook.yml")[::Rails.env]
   config.omniauth :facebook, FB['key'], FB['secret'],
     :scope => 'email,user_education_history,manage_notifications'
