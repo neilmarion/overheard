@@ -6,8 +6,6 @@ class User < ActiveRecord::Base
          :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation
-  attr_accessible :first_name, :last_name, :provider, :uid
 
   def self.from_omniauth(auth)
     
@@ -15,15 +13,20 @@ class User < ActiveRecord::Base
   end 
 
   def self.create_from_omniauth(auth)
-    create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.first_name = auth["info"]["first_name"]
-      user.last_name = auth["info"]["last_name"]
-      user.username = auth["info"]["nickname"]
-      user.email = auth["info"]["email"]
-      user.password = Devise.friendly_token[0,20]
-    end 
+    raw_parameters = { 
+      :provider => auth["provider"],
+      :uid => auth["uid"],
+      :first_name => auth["info"]["first_name"],
+      :last_name => auth["info"]["last_name"],
+      :username => auth["info"]["nickname"],
+      :email => auth["info"]["email"],
+      :password => Devise.friendly_token[0,20]
+    }
+
+    parameters = ActionController::Parameters.new(raw_parameters)
+    user = create(parameters.permit(:provider, :uid, :first_name, :last_name,
+                                        :username, :email, :password))
+    user
   end 
 
   def self.new_with_session(params, session)

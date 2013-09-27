@@ -1,7 +1,4 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :fb_created_at, :fb_id, :fb_updated_at, 
-    :user_fb_id, :from_name, :photo_url
-
   belongs_to :user
 
   default_scope order('fb_created_at DESC')
