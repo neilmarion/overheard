@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :user
 
-  default_scope order('fb_created_at DESC')
+  default_scope { order('fb_created_at DESC') }
 
   scope :paginate, lambda { |page|
     page(page).per(PAGINATION['posts']) }
@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
     if query.present?
       where_content_matches(query)
     else
-      scoped
+      all 
     end
   end
 end
