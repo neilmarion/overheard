@@ -22,6 +22,7 @@ gem 'uglifier', '>= 1.0.3'
 
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'omniauth-facebook', '1.4.0'
 gem 'omniauth-identity'
 gem 'devise'
