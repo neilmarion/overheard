@@ -32,6 +32,7 @@ gem 'bootstrap_helper'
 gem 'bootstrap-sass-rails'
 gem 'rails_autolink'
 gem 'capistrano'
+gem 'koala'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
