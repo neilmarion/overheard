@@ -3,6 +3,8 @@ require 'json'
 
 namespace :fb do
   task :insert_posts => :environment do
+    redis = Redis.new(:host => 'localhost', :port => 6379)
+
     file_log = File.open(Rails.root.join('log', "#{Time.now.to_i}insert_posts.log"), "w")
     file_log.puts "Generating fb access_token..."
     puts "Generating fb access_token..."
@@ -35,12 +37,15 @@ namespace :fb do
 
     page_posts = {}
     page_posts['paging'] = {}
-    page_posts['paging']['next'] = first_page_posts['feed']['paging']['next']
+    puts "next page not null" if redis.get('next_page')
+    page_posts['paging']['next'] = redis.get('next_page') || first_page_posts['feed']['paging']['next']
 
     while !page_posts['paging'].nil?
       file_log.puts "fetching next page of posts..."
       puts "fetching next page of posts..."
       page_posts = JSON.parse(open(URI.encode(page_posts['paging']['next'])).read)
+      puts "next page: #{page_posts['paging']['next']}"
+      redis.set('next_page', page_posts['paging']['next'])
       page_posts['data'].each do |post|
         likes =  graph.fql_query("SELECT like_info.like_count FROM stream WHERE post_id = '#{post['id']}'").first['like_info']['like_count'].to_i
         next unless likes 

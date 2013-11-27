@@ -188,6 +188,23 @@ GEM
       ffi (>= 0.5.0)
     rb-kqueue (0.2.0)
       ffi (>= 0.5.0)
+    redis (3.0.6)
+    redis-actionpack (4.0.0)
+      actionpack (~> 4)
+      redis-rack (~> 1.5.0)
+      redis-store (~> 1.1.0)
+    redis-activesupport (4.0.0)
+      activesupport (~> 4)
+      redis-store (~> 1.1.0)
+    redis-rack (1.5.0)
+      rack (~> 1.5)
+      redis-store (~> 1.1.0)
+    redis-rails (4.0.0)
+      redis-actionpack (~> 4)
+      redis-activesupport (~> 4)
+      redis-store (~> 1.1.0)
+    redis-store (1.1.4)
+      redis (>= 2.2)
     ref (1.0.5)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
@@ -287,6 +304,7 @@ DEPENDENCIES
   rails (= 4.0.0)
   rails_autolink
   rb-inotify (~> 0.9)
+  redis-rails
   rspec-rails
   sass-rails (~> 4.0.0)
   shoulda
